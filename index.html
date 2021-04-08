@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" />
+    <title>Vue Todolist</title>
+    <script type="text/javascript" src="script.js"></script>
+  </head>
+  <body>
+    <div class="content" id="app">
+        <img src="img/logoBoolean.png" alt="">
+      <div id="form">
+        <input type="text" name="" placeholder="Sono un campo di testo vuoto, sono triste" v-model="newJob" v-on:keyUp.enter="addJob">
+        <input type="button" name="" value="Aggiungi" @click="addJob">
+      </div>
+      {{newJob}}
+      <ul id="figo" v-if="toDoList.length > 0">
+        <li v-for="elem in toDoList">{{elem}}
+        </li>
+        <i class="fas fa-times" @click="delJob"></i>
+      </ul>
+      <h2 v-else>Non hai scritto nulla</h2>
+    </div>
+  </body>
+</html>
